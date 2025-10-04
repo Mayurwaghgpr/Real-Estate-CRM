@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 
 function Layout() {
   return (
-    <main className="flex justify-between w-full h-screen  transition-all duration-300 border-gray-300  ">
+    <main className="flex justify-between w-full h-screen  transition-all duration-300 ">
       <ToastContainer stacked={true} />
 
       <SideBar />

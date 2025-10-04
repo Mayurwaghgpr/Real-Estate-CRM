@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Eye, EyeOff, Home, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import CommonInput from "../../components/input/CommonInput";
 import useIcon from "../../hooks/useIcon";
-import { setIsLogin } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
 import useAuthService from "../../services/useAuthService";
 
@@ -51,21 +50,73 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        {/* Logo and Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mb-4 shadow-lg">
-            {icons["home"]}
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            EstateManager
-          </h1>
-          <p className="text-gray-600">Your Real Estate CRM Platform</p>
-        </div>
+    <div className="h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-between  border-inherit">
+      {/* Left Section - Illustration & Branding */}
+      <div className="hidden lg:flex  bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 relative overflow-hidden h-full w-full">
+        {/* Decorative circles */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
 
+        <div className="relative z-10 flex flex-col justify-between p-12 text-white w-full">
+          {/* Logo */}
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-12 h-12 text-2xl bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                {icons["building"]}
+              </div>
+              <h1 className="text-3xl font-bold">EstateManager</h1>
+            </div>
+            <p className="text-blue-100 text-lg ml-15">
+              Your Real Estate CRM Platform
+            </p>
+          </div>
+
+          {/* Central Illustration */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="relative">
+              {/* Main illustration card */}
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                <div className="w-80 h-80 flex items-center justify-center">
+                  <img src="/building.png" alt="building" />
+                </div>
+              </div>
+
+              {/* Floating icons */}
+              <div className="absolute text-2xl -top-8 -right-8 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-xl animate-bounce">
+                {icons["key"]}
+              </div>
+              <div className="absolute text-2xl -bottom-8 -left-8 w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center shadow-xl animate-pulse">
+                {icons["trendingUp"]}
+              </div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="grid grid-cols-3 gap-4">
+            <div className="text-center">
+              <div className="w-12 h-12 text-xl bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-2">
+                {icons["building"]}
+              </div>
+              <p className="text-sm font-medium">Property Management</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 text-xl bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-2">
+                {icons["user"]}
+              </div>
+              <p className="text-sm font-medium">Lead Tracking</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 text-xl bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-2">
+                {icons["trendingUp"]}
+              </div>
+              <p className="text-sm font-medium">Analytics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className=" flex justify-center items-center w-full max-w-xl border-inherit border-s h-full ">
         {/* Login Form */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        <div className=" border-inherit p-8">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               Welcome back
@@ -138,7 +189,7 @@ const Login = () => {
               onClick={handleSubmit}
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                icons["spinner1"]
               ) : (
                 <>
                   Sign In

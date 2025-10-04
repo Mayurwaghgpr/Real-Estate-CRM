@@ -7,7 +7,7 @@ import { ImSpinner2 } from "react-icons/im";
 import EditFollowup from "../pages/Followups_management/EditFollowup";
 
 // Lazy imports
-const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Dashboard = lazy(() => import("../pages/Main_Dashboard/Dashboard"));
 const LeadsManager = lazy(() =>
   import("../pages/Leads Management/LeadsManager")
 );

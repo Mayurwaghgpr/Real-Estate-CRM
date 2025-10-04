@@ -23,7 +23,7 @@ import {
 
 import {
   BsBell,
-  BsCheck,
+  BsBuildings,
   BsCheck2,
   BsCurrencyRupee,
   BsEye,
@@ -31,7 +31,6 @@ import {
   BsPhone,
   BsPlus,
   BsSave,
-  BsShare,
   BsShield,
 } from "react-icons/bs";
 
@@ -40,6 +39,7 @@ import { LuDot, LuUserPlus } from "react-icons/lu";
 import {
   FiEyeOff,
   FiFileText,
+  FiKey,
   FiMapPin,
   FiMessageSquare,
   FiTrendingUp,
@@ -59,7 +59,7 @@ import {
   IoIosArrowUp,
 } from "react-icons/io";
 import { GoIssueReopened } from "react-icons/go";
-import { GrDocument, GrDocumentUpdate } from "react-icons/gr";
+import { GrDocumentUpdate } from "react-icons/gr";
 import { HiDocument, HiMiniLockClosed, HiShare } from "react-icons/hi2";
 const useIcon = () => {
   return {
@@ -72,6 +72,7 @@ const useIcon = () => {
     // B
 
     bell: <BsBell />,
+    building: <BsBuildings />,
 
     // C
     contact: <MdContactEmergency />,
@@ -113,7 +114,7 @@ const useIcon = () => {
     // --
 
     // K
-    // --
+    key: <FiKey />,
 
     // L
     leads: <FaUsers />,
