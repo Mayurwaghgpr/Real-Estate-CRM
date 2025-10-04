@@ -1,9 +1,8 @@
 const express = require("express");
-const connect = require("./config/mongodb");
 const cors = require("cors");
 var cookieParser = require("cookie-parser");
 require("dotenv").config();
-const PORT = process.env.PORT || 5000;
+
 const app = express();
 
 app.use(cookieParser());
@@ -36,9 +35,5 @@ app.use((err, req, res, next) => {
     message: err.message || "Server Error",
   });
 });
-connect()
-  .then(() => {
-    console.log("MongoDB connected");
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  })
-  .catch((err) => console.error(err));
+
+exports = module.exports = app;
