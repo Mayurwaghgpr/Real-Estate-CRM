@@ -228,7 +228,7 @@ export default function DealsKanban() {
 
             {/* Reset Filters Button */}
             <CancelBtn
-              onClick={() => dispatch(resetFilters())} // or dispatch(resetFilters())
+              onClick={() => dispatch(resetFilters())} 
             >
               Clear Filters
             </CancelBtn>
